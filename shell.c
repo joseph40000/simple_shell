@@ -1,6 +1,6 @@
-#include "shell.h"
+#include "allhead.h"
 /**
-  * main - entry point of the program
+  * main - entry point
   * @ac: argument counter
   * @av: argument vector
   * @envp: array of strings.
@@ -16,25 +16,28 @@ int main(int ac __attribute__((unused)), char *av[], char *envp[])
 	signal(SIGINT, SIG_IGN);
 	while (1)
 	{
+		/*read*/
 		if (isatty(STDIN_FILENO))
 			printf("~$ ");
 		if (getline(&buffer, &bufsize, stdin) == -1)
 			break;
 		if (buffer == NULL)
 			exit(0);
+		/*call parse*/
 		av = parse_input_string(buffer);
 		if (!av[0])
 		{
 			free(av);
 			continue;
 		}
-		/*if (_strcmp(av[0], "env") == 0)
+		if (_strcmp(av[0], "env") == 0)
 		{
 			print_environ(), free(av);
 			continue;
 		}
 		if (_strcmp(av[0], "exit") == 0)
 			free(av), free(buffer), exit(0);
+		/*parnt,ex*/
 		child_pid = fork();
 		if (child_pid == 0)
 		{
@@ -45,7 +48,7 @@ int main(int ac __attribute__((unused)), char *av[], char *envp[])
 				perror("execve"), exit(EXIT_FAILURE);
 				break;
 			}
-		}*/
+		}
 		wait(&status), free(av);
 	}
 	free(buffer);
