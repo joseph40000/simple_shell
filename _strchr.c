@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "allhead.h"
 
 /**
  * *_strchr - locates a character in a string.
