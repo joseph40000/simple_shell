@@ -1,0 +1,70 @@
+.TH Simple shell "Dec 2021" 
+
+Man_Page
+
+NAME
+
+Simple shell 
+command interpreter (shell)
+
+SYNOPSIS
+./shell [command_string | file]
+
+
+ 
+DESCRIPTION
+Simple shell is a shell on top of the Kernel. This shell is built as part of the process of learning C.
+
+Simple shell works like bash and any other basic C shells.
+EXAMPLE:
+ls -a
+ . .. other_files
+
+
+
+BUILTINS
+The general knows a couple of builtin commands. it also integrates with other commands \
+that can be located in the PATH.
+exactly as the shell 'sh' or 'bash'.
+
+`alias`   | to create aliases                          
+
+`help`    | to get help on built-in functions          
+
+`cd`      | change working directories                 
+
+`history` | list of commands typed in the past         
+
+`print_environ`| prints environmental variables           
+
+`set`     | sets new environmental variables           
+
+`exit`    | exit out of gbk                            
+
+`unset`   | unsets envrionmental variables             
+
+
+
+.SIMPLE SHELL
+Simple shell takes commands from files, shell scripts and user input in both interactive or non-interactive mode.
+
+SH INITIALIZATION
+
+Simple shell will compile with the following:
+
+gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
+
+
+
+If the user inputs piplines or calls in the non-interactive mode Simple shell should\
+funciton and execute said commands.
+ 
+An example of non-interactive mode input:
+.PP
+. $ echo 'ls -a' | ./hsh
+.PP
+OR
+.B $ cat some_file | ./hsh
+.PP
+---------------------
+.SH OPTION - None
