@@ -6,7 +6,9 @@
 
 It works just as it would with normal shell but its a little bit less, Type `./run.sh` on your terminal. This will enable you to run *hsh simple shell* in interactive mode. To quit, type `exit` or Hit `CTRL-D'
 
-As Part of Alx Curriculm
+As Part of Alx Curriculum.
+Simple shell is a project to be carried out by two respective individuals and to also help in understanding collaborations in the softwareegineering world
+
 General
 Who designed and implemented the original Unix operating system
 Who wrote the first version of the UNIX shell
